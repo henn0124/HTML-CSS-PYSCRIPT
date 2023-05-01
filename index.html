@@ -1,21 +1,42 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-
-  <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
-  <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+  <head>
+    <title>Two Columns Example</title>
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css" />
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <py-config>
+      [[fetch]]
+      files = ["./main.py"]
+    </py-config>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css">
   </head>
-
-<!--create a list  -->
-
-
-  
   <body>
-    <py-script>
-        print('Hello, World!')
-        print('connected codespace')
-        print('connected vercel')
-    </py-script>
+    <div class="container mx-auto my-8 grid grid-cols-2 gap-8">
+      <div class="bg-gray-100 rounded-lg shadow-lg p-4">
+        <h2 class="text-lg font-bold mb-4">Column 1</h2>
+        <div class="dropdown">
+          <label class="block mb-2 font-bold" for="menu1">Menu 1:</label>
+          <select class="w-full py-2 px-3 border border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" id="menu1">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+          </select>
+        </div>
+      </div>
+      <div class="bg-gray-100 rounded-lg shadow-lg p-4">
+        <h2 class="text-lg font-bold mb-4">Column 2</h2>
+        <div class="dropdown">
+          <label class="block mb-2 font-bold" for="menu2">Menu 2:</label>
+          <select class="w-full py-2 px-3 border border-gray-400 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500" id="menu2">
+            <option value="option1">Option 1</option>
+            <option value="option2">Option 2</option>
+            <option value="option3">Option 3</option>
+          </select>
+        </div>
+      </div>
+    </div>
+    <div>
+      <py-script src="./main.py"></py-script>
+    </div>
   </body>
 </html>
